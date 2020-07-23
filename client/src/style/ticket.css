@@ -1,0 +1,9 @@
+.ticket {
+  position: relative;
+  border: 1px dashed #5cb85c;
+  background: #fafafa;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  padding: 1em 1.6em;
+}
