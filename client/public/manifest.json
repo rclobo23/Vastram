@@ -1,20 +1,20 @@
 {
-  "short_name": "vastram Fashions",
-  "name": "vastram Fashions ",
+  "short_name": "Vastram Fashions",
+  "name": "vaVtram Fashions ",
   "description":"#StayHome and get the best discounts on the best of fashion",
   "icons": [
     {
-      "src": "/images/HD.jpg",
+      "src": "/images/vlogo.jpg",
       "sizes": "192x192",
       "type": "image/jpg"
     },
     {
-      "src": "/images/HD.jpg",
+      "src": "/images/vlogo.jpg",
       "sizes": "512x512",
       "type": "image/jpg"
     }
   ],
-  "homepage": "http://vastram.herokuapp.com/", 
+  "homepage": "https://vastram.herokuapp.com/", 
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#fff",
