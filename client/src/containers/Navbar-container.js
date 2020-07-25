@@ -140,7 +140,7 @@ class NavbarContainer extends Component {
       (<NavItem style={itemMenu}>
       <NavLink to={`/category/${gender.catid}`} key={gender.catid} style={{color:'#c6a45b', background:this.state.navcolor}} onClick={()=>{return (resetKeywords(), this.toggle())}}>{gender.catname}</NavLink>
     </NavItem>)
-const mobilecart = <div style={{position:'relative'}}>
+const mobilecart = <div style={{position:'relative'}} className="mr-3">
  <Link to="/cart" style={{textDecoration:'none', color:'#c6a45b'}}> <FaShoppingBag size={25}  />
 <small style={{position:'absolute', left:'20px', bottom:'0px'}}>    <Badge color="danger" pill style = {totalItemsSelectorStats==0?{display: 'none'}:{display: 'block'}}>
       {totalItemsSelectorStats}
@@ -152,7 +152,7 @@ const mobilecart = <div style={{position:'relative'}}>
       (<Nav className="ml-auto" navbar style={{cursor: 'pointer'}}>
       <NavItem>
      
-        <div style={{position:'relative'}}><FaShoppingBag size={35}  onClick={()=>this.setState(totalItemsSelectorStats==0?{ openCartPreview: openCartPreview }:{ openCartPreview:!openCartPreview })} />
+        <div style={{position:'relative', color:'#c6a45b'}}><FaShoppingBag size={35}  onClick={()=>this.setState(totalItemsSelectorStats==0?{ openCartPreview: openCartPreview }:{ openCartPreview:!openCartPreview })} />
       <small style={{position:'absolute', left:'20px', bottom:'0px'}}>    <Badge color="danger" pill style = {totalItemsSelectorStats==0?{display: 'none'}:{display: 'block'}}>
             {totalItemsSelectorStats}
           </Badge></small>
@@ -179,10 +179,10 @@ const mobilecart = <div style={{position:'relative'}}>
 
     return (
       <div className="sticky-top">
-        <Navbar expand="md" style={navbarBackground}>
+        <Navbar expand="md" style={navbarBackground}> {isMobile && mobilecart}
           <Link to="/" style={itemMen} className="text-white"><div style={isMobile?styles.textNone:textBanner}>
       <img src= {this.state.logo} style= {{width: "100%", borderRadius:'5px'}}/>
-      </div></Link> {isMobile && mobilecart}
+      </div></Link> 
     <NavbarToggler  onClick={this.toggle} style={{outline:'none', color:'#c6a45b'}}>{this.state.isOpen?<TiTimes/>:<TiThMenu/>}</NavbarToggler>
           <Collapse isOpen={isOpen} navbar style={{background:this.state.navcolor, color:'#000', fontWeight:'bolder', fontFamily:'Open Sans'}} >
             {navitems.map(x=>

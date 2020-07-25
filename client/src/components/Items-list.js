@@ -18,12 +18,12 @@ import '../style/shimmer.css';
 const ShimmerGrid =()=>{
   return(
     <div style={{height:'100vh'}}> 
-      <div className="comment br animate w100 mx-1 my-3" style={{height:'5vh', width:'66vw'}}/>
+      <div className="comment br dark animate w100 mx-1 my-3" style={{height:'5vh', width:'66vw'}}/>
       <div className="d-flex" style={{flexFlow:'row wrap'}}> 
-      <div className="comment br animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
-      <div className="comment br animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
-      <div className="comment br animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
-      <div className="comment br animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
+      <div className="comment br dark animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
+      <div className="comment br dark animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
+      <div className="comment br dark animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
+      <div className="comment br dark animate w100 mx-1 my-2" style={{height:'40vh', width:'46vw'}}/>
       </div>
     </div>
   )
@@ -106,8 +106,8 @@ const ItemsList = ({
 
   const itemsListByGender_logic = 
   
-    <Col md={{ size: 9, order: 1 }} style={{padding:'5px'}}>
-      {listIsLoading === false && <i>Results: {listLength}</i>}
+    <Col md={{ size: 9, order: 1 }} style={{padding:'5px 10px', color:'#fff'}}>
+      {listIsLoading === false && <i>Showing {listLength} {listLength>1?"Items":"Item"} </i>}
       {FilteredSortedList.length === 0 && listIsLoading === false && 
       <div style={{ display: 'flex', alignItems: 'center'}}>
         <h2><i>No Items Found</i> </h2>
@@ -148,7 +148,8 @@ const ItemsList = ({
 
 
   return (
-    <div>
+    <div style={{backgroundImage: 'linear-gradient(10deg, #222, #111',
+    backgroundSize: 'contain',}}>
        {/* <ItemsListBanner 
         gender={gender} 
         reducerPriceRangeFilter={reducerPriceRangeFilter}

@@ -164,8 +164,10 @@ dataload.map((item)=>{
    )
     })
     return(
-    <div className="pt-3" style={{backgroundImage:`linear-gradient(to bottom, #fefefeaa, #fff)`}}>
-      <h5 className="mx-4 mx-md-5 my-3" style={{ fontFamily:'Open Sans'}}><Link to="/" style={{color:'#000',}}><span className="fa fa-home"/></Link> › {this.state.catname} Collections</h5>
+    <div className="pt-3" 
+    style={{backgroundImage: 'linear-gradient(60deg, #000, #000d) ,url(/images/bg.jpg)',
+    backgroundSize: 'contain',}}>
+      <h5 className="mx-4 mx-md-5 my-3 text-white" style={{ fontFamily:'Open Sans'}}><Link to="/" style={{color:'#fff',}}><span className="fa fa-home"/></Link> › {this.state.catname} Collections</h5>
       <div className="container p-4" style = {{ display:'flex',minHeight:'100vh', flexFlow:'row wrap', width:'100%',}}> {cards}</div>
     </div>
     )

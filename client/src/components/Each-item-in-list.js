@@ -22,23 +22,24 @@ const styles = {
     padding: '10px',
   },
   spaceColumn: {
-    marginLeft: '1px',
-    marginRight: '1px',
-    marginBottom: '20px',
-    //boxShadow: 'lightgrey -1px 1px 2px 1px',
+    margin:'1px',
+    boxShadow: 'none',
     borderRadius: '2px',
     padding: '1px',
     width : '100%',
-   // height:'350px',
+    height:'340px',
+    border:'solid 1px #181818',
+    background: '#000'
   },
   spaceColumnPC: {
+    background: '#000',
     marginLeft: '10px',
     marginRight: '10px',
     marginBottom: '5px',
-    border: 'solid 1px #fefefe',
+    border: 'solid 1px #000',
     borderRadius: '4px',
-    height:'auto',
-    boxShadow: 'lightgrey -1px 0px 5px 0px',
+    height:'360px',
+    boxShadow: 'none',
     padding: '2px 2px 2px 2px',
   }, 
   fontSize: {
@@ -67,14 +68,14 @@ const EachItemInList = ({
    } */
 
   return (FilteredSortedList.slice((currentPage-1)*itemsMaxPage,itemsMaxPage*currentPage).map(x => 
-    <div md="6" style={isMobile?{ padding: '3px',width: '50%'}:{ padding: '10px',width:'33%',}}  key={x._id}> 
+    <div md="6" style={isMobile?{ padding: '7px',width: '50%'}:{ padding: '10px',width:'33%',}}  key={x._id}> 
        <Link to={`/item/${x._id}/${x.title.split(' ').join('-')}`} className="text-white">
          <Card style={isMobile?styles.spaceColumn:styles.spaceColumnPC} onMouseOver={touchme}>       
           <CardImg top width="100%" src={x.images[0]} alt={x.title} />
-          <div className="px-2 py-1">
+          <div className="px-2 py-1" >
           
-            <p style={{fontSize: '18px', color:'black'}}>{x.title}</p>
-            {/* <StarRatings
+            <p style={{fontSize: '18px', color:'#aaa'}}>{x.title}</p>
+            {/*  <StarRatings
               rating={x.rating}
               starDimension="15px"
               starSpacing="1px"
@@ -82,12 +83,12 @@ const EachItemInList = ({
               // changeRating={this.changeRating}  <-- uncomment to transform in input
               numberOfStars={5}
               name='rating'
-              /> */}
+              />  */}
               {x.special ?'':<span style={{overflow:'hidden', fontSize:'10px', margin:'1px', top: '-5px', position:'absolute', right:'-5px' ,textAlign: 'center', width: '30px', height:'30px'}} className=" rounded-circle bg-success">10%<br/>Off</span>}
 
               <div style={{margin:'1px' ,display:'flex', flexFlow:'row wrap', top: '0px', textAlign: 'center', width: '100%'}}>
                 
-                {x.color.map(x=><div key={x} style={{width:'20px', height:'20px', backgroundColor:color(x), marginLeft:'-7px', border:x=='White'?`solid 1px #000`:`solid 1px white`, borderRadius: '20px'}}>
+                {x.color.map(x=><div key={x} style={{width:'20px', height:'20px', backgroundColor:color(x), marginLeft:'-7px', border:`none`, borderRadius: '20px'}}>
 
                   {/*   {isColor(x)?"color":'not color'} */}
                  </div> 
@@ -101,7 +102,7 @@ const EachItemInList = ({
                   <div key={item} style={{width:'20px', height:'20px', backgroundColor:item.substring(item.indexOf('#'), item.indexOf('#')+6), marginLeft:'-7px', fontSize:'10px', border:`solid 1px white`, borderRadius: '20px'}}>
                     {item.substring(0, item.indexOf('#'))} </div> })} */}
               
-            <p className="text-big" style={{fontSize: '16px',padding:'3px', width: 'fit-content', marginTop:'10px', background:'darkred',  color: 'white', fontWeight:"bold", textDecoration:'none'}}>&#8377; {x.price}</p>
+            <p className="text-big" style={{fontSize: '16px',padding:'3px', width: 'fit-content', marginTop:'10px', background:'#c6a45b',  color: '#000', fontWeight:"bold", textDecoration:'none'}}>&#8377; {x.price}</p>
           </div>
       </Card>
       </Link>

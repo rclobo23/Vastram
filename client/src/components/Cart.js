@@ -58,7 +58,8 @@ const Cart = ({
   
   return (
     
-    getCart.length ==0 ?<div className="d-flex justify-content-center align-items-center" style={{minHeight:'100vh'}}><h5>No items in your cart.<br/><Link to="/"><Button >Shop Now</Button></Link></h5> </div>:
+    getCart.length ==0 ?<div className="d-flex justify-content-center align-items-center flex-column" style={{minHeight:'90vh',  backgroundImage: 'linear-gradient(10deg, #000, #000c) ,url(/images/bg.jpg)',
+    backgroundSize: 'contain',}}><h4 className=" text-white">No items in your cart.<br/></h4><Link to="/"><Button size="lg" className="bg-warning mt-5" style={{color:'#000'}}>Shop Now</Button></Link> </div>:
     <div style={containerPadding}>
       <Container>     
      <h1 style={centerh1}>Your Cart</h1>

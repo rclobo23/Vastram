@@ -89,7 +89,7 @@ class  shopByNew extends Component {
     return(
       <div style = {{display:'flex',
       flexFlow:'row nowrap', 
-       background:'#fff',
+     
        justifyContent: 'left'}}>{categories.length>0?cards:<ShimmerCards/>}</div>
     )
   }
