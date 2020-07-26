@@ -44,7 +44,7 @@ class MainImage extends Component {
     
           <div className="my-4">
   {/* <img src={this.state.mainimage} classname="offset-4" style={{width:'80%'}}/> */}
-  <video width={isMobile?"320":"480"} height={isMobile?"240":'260'} autoPlay={true} controls={true}>
+  <video width={isMobile?"320":"480"} height={isMobile?"240":'260'} autoPlay={false} controls={true}>
     <source src="/images/video.mp4" type="video/mp4"/>
     <img src={this.state.mainimage} classname="offset-4" style={{width:'80%'}}/>
   </video>

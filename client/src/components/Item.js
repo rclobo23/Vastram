@@ -110,13 +110,13 @@ togglereview = () =>this.setState({reviewopen:!this.state.reviewopen});
       <meta name="Vastram Fashions" />
       <meta property="og:title" content={"Vastram Fashions - "+infoItem.title}/>
     <meta property="og:description" content={infoItem.title+" Buy now at Vastram Fashions E-Store"}/>
-    <meta property="og:url" content={"http:// ariesfashion.herokuapp.com/"+infoItem._id+"/"+infoItem.title}/>
+    <meta property="og:url" content={"http:// vastram.herokuapp.com/"+infoItem._id+"/"+infoItem.title}/>
     <meta property="og:type" content="product"/>
     <meta property="og:image" content={infoItem}/>
     </Helmet>
       <div style={{ height: "95vh" }} className="d-flex justify-content-center p-3 flex-column" >
 
-      <div className="comment br animate w100" style={{height:'60vh'}}/>
+      <div className="comment br animate w100" style={{height:'50vh'}}/>
       <div className="d-flex "> 
       <div className="comment br animate w100 mx-2" style={{height:'10vh', width:'15vw'}}/>
       <div className="comment br animate w100 mx-2" style={{height:'10vh', width:'15vw'}}/>
@@ -136,8 +136,8 @@ togglereview = () =>this.setState({reviewopen:!this.state.reviewopen});
           src={infoItem.images[index]}
           alt={infoItem.title}
 
-          width="50px"
-          height="70px"
+          width="60px"
+          height="60px"
           style={{cursor: 'pointer',borderRadius:'5px', border:this.state.selectedImage == index ? 'solid 2px dodgerblue': ''}}
         />
       </div>
@@ -160,7 +160,7 @@ togglereview = () =>this.setState({reviewopen:!this.state.reviewopen});
       <meta name="Vastram Fashions" />
       <meta property="og:title" content={"Vastram Fashions - "+infoItem.title}/>
     <meta property="og:description" content={infoItem.title+" only on the Vastram Fashions E-Store"}/>
-    <meta property="og:url" content={"http:// ariesfashion.herokuapp.com/"+infoItem._id+"/"+infoItem.title}/>
+    <meta property="og:url" content={"http:// vastram.herokuapp.com/"+infoItem._id+"/"+infoItem.title}/>
     <meta property="og:type" content="product"/>
     <meta property="og:image" content={infoItem.images && infoItem.images[0]}/>
     </Helmet>
@@ -295,7 +295,7 @@ togglereview = () =>this.setState({reviewopen:!this.state.reviewopen});
               />
               <p style={{ paddingTop: "30px" , fontSize:'smaller'}}>Description:</p>
               <p style={{fontSize:'small'}}>{infoItem.description}</p>
-              <Modal isOpen={reviewopen} backdrop={false} toggle={this.togglereview}>
+              <Modal isOpen={reviewopen} backdrop={true} toggle={this.togglereview}>
                 <Review admin={false} product={infoItem}/>
                 </Modal>
             </Col>

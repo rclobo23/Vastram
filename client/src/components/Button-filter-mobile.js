@@ -65,7 +65,7 @@ class ButtonFilterMobile extends Component {
                 dispatchSize={dispatchSize} 
                 sortSizeForFilter={sortSizeForFilter}
               />
-            <h4>Price {`< ${reducerPriceRangeFilter}$`}</h4>    
+            <h4>Price {`< Rs. ${reducerPriceRangeFilter}`}</h4>    
               <ItemListFilterPriceBar 
                 actionPriceRangeFilter={actionPriceRangeFilter}
                 reducerPriceRangeFilter={reducerPriceRangeFilter}

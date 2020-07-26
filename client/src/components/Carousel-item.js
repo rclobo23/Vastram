@@ -65,7 +65,7 @@ class CarouselItemPage extends Component {
           onExited={this.onExited}
           key={index}
         >
-          <img style={{width: '100%', height: '500px'}} src={x} alt={x} />
+          <img style={{width: '100%', height: '400px'}} src={x} alt={x} />
         </CarouselItem>
       );
     });
