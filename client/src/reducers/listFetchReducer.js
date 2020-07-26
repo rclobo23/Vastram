@@ -54,7 +54,7 @@ export const itemIsLoading = (state = false, action) => {
   }
 };
 
-export const sortArgsForFilter = (state = 'titleAsc', action) => {
+export const sortArgsForFilter = (state = 'A - Z', action) => {
 	switch (action.type) {
 		case FILTER_ARGS:
 			return action.sortArg;
@@ -74,7 +74,7 @@ export const sortSizeForFilter = (state = 'All', action) => {
 	}
 };
 
-export const reducerPriceRangeFilter = (state = 20000, action) => {
+export const reducerPriceRangeFilter = (state = 10000, action) => {
 	switch (action.type) {
 		case FILTER_PRICE_RANGE:
 			return action.getPriceRange;

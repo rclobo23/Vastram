@@ -48,11 +48,13 @@ router.post('/update/mainimage', (req, res, next)=> {
   const {main_image, id } = req.body
   ModelVariable.findById(id, (err, model) => {
     if (err) return handleError(err);  
+    else{
     model.set({ main_image});
     model.save(function (err, updatedItem) {
       if (err) return console.log(err);
       return updatedItem;
     });
+    }
   })
 })
 router.post('/update/bg', (req, res, next)=> {

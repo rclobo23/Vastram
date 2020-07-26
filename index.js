@@ -25,6 +25,8 @@ app.use('/api', require('./routes/router'))
 app.use('/mail', require('./routes/mailRouter'))
 
 env !== 'development' && app.get('*', (req, res) => {
+  res.set('Cache-Control', 'public, max-age="31557600"') //onji varsha 
+  res.header('Cache-Control', 'public, max-age="31557600"') //onji varsha 
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 

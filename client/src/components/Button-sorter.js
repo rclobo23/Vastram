@@ -28,7 +28,7 @@ class ButtonSorter extends Component {
 
     const dropDownWithArrow = (x) => 
     
-    <Fragment><img src= "/up-arrow.png" alt="" />{' '+x}</Fragment>
+    <Fragment>{' '+x}</Fragment>
   
 
     const eachDropDown = (optionsArray) => optionsArray.map(x=>( 

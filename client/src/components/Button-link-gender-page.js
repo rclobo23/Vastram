@@ -18,12 +18,12 @@ const styles = (imgsrc) => ({
   },
   buttonStylePc: {
     margin:'10px',
-    padding: '5px 15px',
-    background:'#fff',    
-    color:'#000',
+    padding: '5px 10px',
+    background:'#000',    
+    color:'#c6a45b',
     border: '0px', 
-    borderRadius:'0px', 
-    boxShadow:'3px 3px 0px 0px #000, -3px -3px 0px 0px lightcoral',  
+     borderRadius:'20px 0px 20px 0px', 
+    boxShadow:'-3px 3px 0px 0px #c6a45b, 3px -3px 0px 0px #c6a45b',
     
   },
   buttonStyleMobile: {
@@ -31,11 +31,11 @@ const styles = (imgsrc) => ({
     margin:'5px',
     padding: '5px 5px ',    
     marginTop: "20px",
-    background:'#fff',    
-    color:'#000',
+    background:'#000',    
+    color:'#c6a45b',
     border: '0px', 
-    borderRadius:'0px', 
-    boxShadow:'3px 3px 0px 0px #000, -3px -3px 0px 0px lightcoral',
+    borderRadius:'20px 0px 20px 0px', 
+    boxShadow:'-3px 3px 0px 0px #c6a45b, 3px -3px 0px 0px #c6a45b',
   }
 })
 

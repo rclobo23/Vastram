@@ -46,14 +46,15 @@ export default class Category extends Component {
          </div>
          <div className="col-2" style={{background:"#000"}}/>
       </div> */}
-      <div style={{display:"flex", flexFlow:'row wrap', marginLeft:isMobile?'':'5rem'}}>
+        <div style = {{ width: '100%', position:'relative', overflowX:'scroll', scrollbarWidth:'none',background:'#000', paddingTop:'20px' }}><ShopByPrice/></div>
+      <div style={{display:"flex", flexFlow:'row wrap'}} className="mx-md-5">
         
           {apiList.map((x, index)=>       
-        !x.hide && index<3 &&
-               <div key={x._id} className="animated wow fadeIn" 
-               style={{backgroundImage:'url('+x.images[0]+')',
+        !x.hide && 
+               <Link to={`/category/${x._id}`}key={x._id} className="animated wow fadeIn" 
+               style={{backgroundImage:'linear-gradient(9deg, #000, #fff0, #fff0), url('+x.images[0]+') ',
                backgroundRepeat: 'round', height:isMobile?'120vw':'31vw', backgroundSize:'cover',
-               width:isMobile?'100%':'31%', borderRadius:'0px',
+               width:isMobile?'100%':'32%', borderRadius:'0px',
                margin:'0px',border:isMobile?"0":'solid 10px #000',
                  padding:'0px', position:'relative'}}>
                      <Link to={`/category/${x._id}`} style={{color:'#000', textDecoration:'none'}}>  
@@ -61,34 +62,41 @@ export default class Category extends Component {
                       </h3>
                       </Link>
                           <div style={{ bottom: '20px', position:'absolute'}}>    
-                            {x.subcats.map((item, ind)=>
-                              <small  style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '3px 10px',   margin :'5px', border:'solid 0.5px lightgrey', position:'relative'}}> {item}</small>
+                            {x.subcats.map((item, ind)=> ind<3 ?
+                             <Link to={`/productslist/${item}`}><small  style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '5px 10px',   margin :'5px', border:'solid 0.5px lightgrey',color:'#000', position:'relative'}}> {item}</small> </Link>
+                             :
+                             ind == x.subcats.length - 1?   <small className="mt-4" style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '5px 10px',   marginTop :'25px',  margin :'5px', border:'solid 0.5px lightgrey',color:'#000',}}>+ {x.subcats.length - 3}</small> 
+                            : ""
                             )}  
                           </div>   
-                          {/* { index==2? <div style = {{ width: '100%', position:'absolute', overflowX:'scroll', scrollbarWidth:'none',background:'#000', paddingTop:'20px' }}><ShopByPrice/></div> :''      } */}
-              </div>
+                        
+              </Link>
           )}
-           <div style = {{ width: '100%', position:'relative', overflowX:'scroll', scrollbarWidth:'none',background:'#000', paddingTop:'20px' }}><ShopByPrice/></div>
-           {apiList.map((x, index)=>       
+         
+       {/*     {apiList.map((x, index)=>       
         !x.hide && index>=3 &&
-               <div key={x._id} className="animated wow fadeIn" 
-               style={{backgroundImage:'url('+x.images[0]+')',
-               backgroundRepeat: 'round', height:isMobile?'120vw':'31vw', backgroundSize:'cover',
-               width:isMobile?'100%':'31%', borderRadius:'0px',
-               margin:'0px',border:isMobile?"0":'solid 10px #000',
-                 padding:'0px', position:'relative'}}>
-                     <Link to={`/category/${x._id}`} style={{color:'#000', textDecoration:'none'}}>  
-                      <h3 style={{background:'#000',color:'#c6a45b',borderRadius:'0px', borderLeft:'solid 2px #c6a45b',width: 'fit-content', padding: '5px 10px',position:'absolute', bottom:'10vh'}}>    {x.catname}{x.imagedata}
-                      </h3>
-                      </Link>
-                          <div style={{ bottom: '20px', position:'absolute'}}>    
-                            {x.subcats.map((item, ind)=>
-                              <small  style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '3px 10px',   margin :'5px', border:'solid 0.5px lightgrey', position:'relative'}}> {item}</small>
-                            )}  
-                          </div>   
-                          {/* { index==2? <div style = {{ width: '100%', position:'absolute', overflowX:'scroll', scrollbarWidth:'none',background:'#000', paddingTop:'20px' }}><ShopByPrice/></div> :''      } */}
-              </div>
-          )}
+        <Link to={`/category/${x._id}`}key={x._id} className="animated wow fadeIn" 
+        style={{backgroundImage:'linear-gradient(9deg, #000, #fff0, #fff0), url('+x.images[0]+') ',
+        backgroundRepeat: 'round', height:isMobile?'120vw':'31vw', backgroundSize:'cover',
+        width:isMobile?'100%':'31%', borderRadius:'0px',
+        margin:'0px',border:isMobile?"0":'solid 10px #000',
+          padding:'0px', position:'relative'}}>
+              <Link to={`/category/${x._id}`} style={{color:'#000', textDecoration:'none'}}>  
+               <h3 style={{background:'#000',color:'#c6a45b',borderRadius:'0px', borderLeft:'solid 2px #c6a45b',width: 'fit-content', padding: '5px 10px',position:'absolute', bottom:'10vh'}}>    {x.catname}{x.imagedata}
+               </h3>
+               </Link>
+                   <div style={{ bottom: '20px', position:'absolute'}}>    
+                     {x.subcats.map((item, ind)=> ind<3 ?
+                      <Link to={`/productslist/${item}`}><small className="mt-4" style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '5px 10px',   marginTop :'25px',  margin :'5px', border:'solid 0.5px lightgrey',color:'#000',}}> {item}</small> </Link>
+                     :
+                     ind == x.subcats.length - 1?   <small className="mt-4" style={{background:'#fff', borderRadius:'20px' ,width: 'fit-content',  padding: '5px 10px',   marginTop :'25px',  margin :'5px', border:'solid 0.5px lightgrey',color:'#000',}}>+ {x.subcats.length - 3}</small> 
+                    : ""
+                     )}  
+
+                   </div>   
+                   {/* { index==2? <div style = {{ width: '100%', position:'absolute', overflowX:'scroll', scrollbarWidth:'none',background:'#000', paddingTop:'20px' }}><ShopByPrice/></div> :''      } */}
+     
+          {/* )} */} 
         </div>
       </div>
     )

@@ -19,7 +19,6 @@ const Footer = () => (
       </Row> 
       <Row>
         <Col md='12' style={{textAlign: 'center', paddingTop:'5px', paddingBottom:'5px'}}>Vastram Fashions</Col>
-        <Col md="12" className="mt-3" style={{paddingTop:'1px', textAlign: 'center',}}><a href="https://instagram.com/myindiaoffers"><span className="fa fa-instagram mx-2 " style={{color:"#000"}}/></a><span className="fa fa-facebook mx-2 " style={{color:"#000"}}/> <span className="fa fa-youtube-play mx-2" style={{color:"#000"}}/><span className="fa fa-envelope mx-2" style={{color:"#000"}}/><span className="fa fa-phone mx-2" style={{color:"#000"}}/></Col>
       </Row>
  </Container>
   </div>    

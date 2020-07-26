@@ -13,6 +13,7 @@ import {
 import ButtonInternalLink from './Button-internal-link';
 import { Link } from 'react-router-dom';
 import '../style/shimmer.css';
+import '../style/CarouselControl.css';
 
 const styles = {
   sliderContent: {
@@ -60,10 +61,10 @@ class CarouselHomepage extends Component {
             caption: item.caption,
             src: item.src,
             mobilesrc : item.mobilesrc,
-            altText: 'Slide 1',
-     caption: 'Slide 1',
+            altText: 'vastram 1',
+     caption: 'vastram',
     title: item.caption,
-    subtitle: 'Check our nice collection',
+    subtitle: 'Vastram collection',
     btn: {
       content: 'Go to the collection',
       link: '/category/men'
@@ -110,12 +111,11 @@ class CarouselHomepage extends Component {
           key={x.src}
           link={x.title}
         > <Link to={x.title}>
-          <Row  style={isMobile?{backgroundColor: '#05050500', height:'30vh', marginTop:'0vh'}:{backgroundColor: '#05050500', padding:'30px', height:'70vh'}}>
+          <Row  style={isMobile?{backgroundColor: '#000', height:'30vh', marginTop:'0vh'}:{backgroundColor: '#05050500', padding:'3px', height:'62vh', marginBottom:'0px'}}>
             <Col md={isMobile?"6":"12"}>
               <img src={x.src}  alt={x.altText} style={{width: '100%', height: '-webkit-fill-available', borderRadius:'10px'}}/>
             </Col>
-          { <Col md="12" style={styles.sliderContent , isMobile?styles.fixDown:styles.sliderContent }>              
-            </Col>}
+          
           </Row>
           </Link> </CarouselItem>
       );
@@ -126,20 +126,22 @@ class CarouselHomepage extends Component {
     }
 const Shimmer = ()=>{
   return(
-        <div className="comment br animate w100 mx-3 my-4" style={shimmerstyle}/>
+        <div className="comment dark br animate w100 mx-3 my-4" style={shimmerstyle}/>
   )
 }
     return (
       
-      this.state.items.length>0?<Carousel
-      autoPlay = {true}
+      this.state.items.length>0?
+      <Carousel          
+      ride="carousel"
+      autoPlay={true}
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
         keyboard ={true}
       >
         {slides}
-         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+         <CarouselIndicators  items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} /> 
        {/*  <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} /> */}
       </Carousel>      :<Shimmer/> 

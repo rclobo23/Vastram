@@ -59,11 +59,11 @@ const shimmerstyle = {
 const ShimmerCards = () =>{
   return(
     <div className="d-flex p-2">
-    <div className="comment br animate w100 mx-2 my-2" style={shimmerstyle}/>
-    <div className="comment br animate w100 mx-2 my-2" style={shimmerstyle}/>
-    <div className="comment br animate w100 mx-2 my-2" style={shimmerstyle}/>
-    <div className="comment br animate w100 mx-2 my-2" style={shimmerstyle}/>
-    <div className="comment br animate w100 mx-2 my-2" style={shimmerstyle}/>
+    <div className="comment dark  br animate w100 mx-2 my-2" style={shimmerstyle}/>
+    <div className="comment dark  br animate w100 mx-2 my-2" style={shimmerstyle}/>
+    <div className="comment dark  br animate w100 mx-2 my-2" style={shimmerstyle}/>
+    <div className="comment dark  br animate w100 mx-2 my-2" style={shimmerstyle}/>
+    <div className="comment dark  br animate w100 mx-2 my-2" style={shimmerstyle}/>
 </div>
   )
 }
@@ -71,12 +71,13 @@ const ShimmerCards = () =>{
     const cards = categories.length>0 && categories.map(x => {
     return(
       <Link to={`/productslist/${encodeURI(x.catname)}`}>
-        <div className=" wow animated slideInRight shadow-sm  mx-3 mb-5 px-3 py-1 text-center" 
-            style = {{width: isMobile?'55vw':'20vw',
+        <div className=" wow animated slideInRight shadow-sm mx-md-3 mx-3 mb-5 px-md-1 px-3 py-1 text-center" 
+            style = {{width: isMobile?'45vw':'15vw',
             color:'#c6a45b',
             background:'#000',
             border:'solid 0.5px #c6a45b',
             borderRadius:' 0px',
+            height:'100px',
             alignItems: 'center',}}>
           <h6 className="text-uppercase text-center ">{x.catname}</h6> 
           <small className="text-upper"> starting from</small><br/>
@@ -89,7 +90,7 @@ const ShimmerCards = () =>{
       <div style = {{display:'flex',
                      flexFlow:'row nowrap', 
                       background:'#ffff0',
-                      justifyContent: 'left'}}>{categories.length>1  ? cards:<ShimmerCards/>}</div>
+                      justifyContent: 'left'}} className="my-4">{categories.length>1  ? cards:<ShimmerCards/>}</div>
     )
   }
 } 
